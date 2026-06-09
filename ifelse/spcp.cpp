@@ -10,15 +10,15 @@ int main(){
     cin>>cp;
 
     if(sp>cp){
-        cout<<"profit";
+        cout<<"profit =" <<sp-cp;
     }
 
     if(cp>sp){
-        cout<<"Loss";
+        cout<<"Loss = " <<cp-sp;
     }
 
     if(sp==cp){
-        cout<<"No profit, No Loss";
+        cout<<"No profit, No Loss = " ;
     }
 
 }
