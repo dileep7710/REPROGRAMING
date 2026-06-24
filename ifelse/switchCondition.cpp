@@ -20,7 +20,7 @@ int main(){
 
     switch(x){
         case 3 : 
-        cout<<"28";
+        cout<<"28]";
     }
 
 }
