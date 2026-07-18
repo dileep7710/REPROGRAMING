@@ -14,3 +14,4 @@ int main(){
      if(flag==true) cout<<"Prime Number";
      else cout<<n<<"is composite";
 }
+
