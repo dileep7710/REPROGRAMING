@@ -33,7 +33,7 @@ int main(){
         nsp--;
 
         for(int k=1; k<=nst; k++){
-            cout<<"*" ;
+            cout<<"*";
         }
         nst+=2;
         cout<<endl;
