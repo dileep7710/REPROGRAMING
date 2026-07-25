@@ -10,7 +10,7 @@ int main(){
     cout<<"Enter array size : ";
     cin>>n;
 
-    cout<<"Enter array size : ";
+    cout<<"Enter array elements : ";
     for(int i=0; i<n; i++){
         int q;
         cin>>q;
