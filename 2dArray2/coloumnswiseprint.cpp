@@ -22,7 +22,7 @@ int main(){
         if(j%2==0){
             for(int i=0; i<m; i++){
                 cout<<arr[i][j]<<" ";
-            }
+            }   
             
         }
         else{
