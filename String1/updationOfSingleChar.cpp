@@ -2,7 +2,16 @@
 #include<string>
 using namespace std;
 int main(){
-    string str ="Dileep";
-    str[0] = 'o';
-    cout<<str;
+     string str = "Dileep";
+     cout<<str<<endl;
+    // str[0] = 'o';
+    // cout<<str;
+
+    for(int i=0; str[i]!='\0'; i++){
+        if(i%2==0) str[i] = 'a';
+    }
+
+    cout<<str<<endl;
+
+
 }
