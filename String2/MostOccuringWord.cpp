@@ -23,7 +23,7 @@ int main(){
     maxCount = max(maxCount, count);
    }
     
-   count = 1;
+    count = 1;
    for(int i=1; i<v.size();i++){
     if(v[i]==v[i-1]) count++;
     else count = 1; 
