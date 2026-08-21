@@ -27,8 +27,10 @@ int main(){
                 else if(arr[i][mid]<x) lo = mid+1;
                 else hi = mid - 1;
             }
-            if(firstIdx!=-1) countOnes = n-firstIdx;
-            cout<<countOnes<<endl;
+            if(firstIdx!=-1)
+                countOnes = n-firstIdx;
+                cout << countOnes << endl;
+            
 
             if(maxOnes<countOnes){
                 maxOnes = countOnes;
