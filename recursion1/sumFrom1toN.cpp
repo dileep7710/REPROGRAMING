@@ -7,7 +7,13 @@ void sum1toN(int sum, int n){
     }
     sum1toN(sum+n,n-1);
 }
+int sum2(int n){
+    if(n==0) return 0;
+    return n + sum2(n-1);
+}
 
 int main(){
-    sum1toN(0,10);
+    //sum1toN(0,10);
+    cout<<sum2(6);
+
 }
