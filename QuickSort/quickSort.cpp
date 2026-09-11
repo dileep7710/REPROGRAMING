@@ -1,6 +1,5 @@
 #include<iostream>
 using namespace std;
-
 int partition(int arr[], int si, int ei){
     int pivotElement = arr[si];
     int count = 0;
@@ -13,22 +12,20 @@ int partition(int arr[], int si, int ei){
     int j = ei;
     while(i<pivotIdx && j>pivotIdx){
         if(arr[i]<=pivotElement) i++;
-        if(arr[j]>pivotElement) j--;
+        if(arr[j]>=pivotElement) j--;
         else if(arr[i]>pivotElement && arr[j]<=pivotElement){
-            swap(arr[i],arr[j]);
+            swap(arr[i], arr[j]);
             i++;
             j--;
         }
     }
     return pivotIdx;
 }
-
 void quicksort(int arr[], int si, int ei){
-    if(si>=ei) return;
+    if(si>=ei) return; // base
     // 5,1,8,2,7,6,3,4
-    int pi = partition(arr, si, ei );
-    // 4 1 3 2 5 7 8 6 
-
+    int pi = partition(arr,si,ei);
+    // 4 1 3 2 5 7 8 6
     quicksort(arr,si,pi-1);
     quicksort(arr,pi+1,ei);
 
@@ -41,8 +38,7 @@ int main(){
     }
     cout<<endl;
     quicksort(arr,0,n-1);
-
-    for(int i=0; i<n; i++){
+    for(int i=0;i<n;i++){
         cout<<arr[i]<<" ";
     }
 }
