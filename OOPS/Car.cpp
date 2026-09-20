@@ -29,7 +29,7 @@ int main(){
     c3.name = "Toyota Fortuner";
     c3.price = 3600000;
     c3.seats = 8;
-    c3.type = "SUV"; 
+    c3.type = "SUV";  
 
     print(c1);
     print(c2);
