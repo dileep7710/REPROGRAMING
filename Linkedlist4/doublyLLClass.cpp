@@ -59,23 +59,8 @@ public:
             t->next->prev = t;   // extra
             size++;
         }
-    
     }
-    int getAtIdx(int idx){
-        if(idx<0 || idx>=size){
-            cout<<"Invalid Index";
-            return -1;
-        }
-        else if(idx==0) return head->val;
-        else if(idx==size-1) return tail->val;
-        else{
-            Node* temp = head;
-            for(int i=1;i<=idx;i++){
-                temp = temp->next;
-            }
-            return temp->val;
-        }  
-    }
+   
     void deleteAthead(){
         if(size==0){
             cout<<"List is Empty!";
@@ -96,14 +81,71 @@ public:
             deleteAthead();
             return;
         }
-        Node*temp = head;
-        while(temp->next!=tail){
-            temp = temp->next;
-        }
-        temp->next = NULL;
-        tail = temp;
+       Node* temp = tail->prev;
+       temp->next = NULL;
+       tail = temp;
         size--;
     }
+
+    void deleteAtIdx(int idx){
+        if(size==0){
+            cout<<"List is Empty!";
+            return;
+        }
+        else if(idx<0 || idx>=size){
+            cout<<"Invalid Index";
+            return;
+        }
+        else if(idx==0) return deleteAthead();
+        else if(idx==size-1) return deleteAtTail();
+        else{
+          if(idx<size/2){
+            Node* temp = head;
+            for(int i=1; i<idx;i++){
+                temp = temp->next;
+            }
+            temp->next = temp->next->next;
+            temp->next->prev = temp;
+            size--;
+          }
+          else {  // idx < size
+            Node* temp = tail;
+            for(int i=1; i<size-idx-1;i++){
+                temp = temp->prev;
+            }
+            temp->prev = temp->prev->prev;
+            temp->prev->next = temp;
+            size--;
+          }
+          
+        }
+    }
+    int getAtIdx(int idx){
+        if(idx<0 || idx>=size){
+            cout<<"Invalid Index";
+            return -1;
+        }
+        else if(idx==0) return head->val;
+        else if(idx==size-1) return tail->val;
+        else{
+          if(idx<size/2){
+            Node* temp = head;
+            for(int i=1;i<=idx;i++){
+                temp = temp->next;
+            }
+            return temp->val;
+          }
+        else{ // idx > size/2
+            Node* temp = tail;
+            for(int i=1;i<size-idx;i++){
+                temp = temp->prev;
+            }
+            return temp->val;
+
+          }
+        }  
+    }
+
     void display(){
         Node* temp = head;
         while(temp!=NULL){
@@ -121,11 +163,23 @@ int main(){
     list.insertAtTail(20);
     list.insertAtTail(30);
     list.insertAtTail(40);
-    list.display();
+   //  list.display();
+    list.insertAtTail(50);
+    //list.display();
+    list.insertAtIdx(2,60);
+  //  list.display();
+    list.deleteAtTail();
+   // list.display();
+    list.deleteAthead();
+   // list.display();
+    list.insertAtTail(90);
+    //list.display();
+    list.deleteAtIdx(3);
+    //list.display();
+    //cout<<list.getAtIdx(1);
+    list.insertAtTail(40);
     list.insertAtTail(50);
     list.display();
-    list.insertAtIdx(2,60);
-    list.display();
-
+    
     
 }
