@@ -35,7 +35,7 @@ int main(){
       gt.pop();
        
     }
-    
+
     while(rt.size()>0){
       st.push(rt.top());
       rt.pop();        
