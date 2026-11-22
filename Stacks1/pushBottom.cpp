@@ -13,10 +13,24 @@ void print(stack<int> &st){
         st.push(temp.top());
         temp.pop();
     }
+    cout<<endl;
 }
 void pushAtBottom(stack<int> &st, int val){
     stack<int> temp;
     while(st.size()>0){
+        temp.push(st.top());
+        st.pop();
+    }
+    st.push(val);
+    while(temp.size()>0){
+        st.push(temp.top());
+        temp.pop();
+    }
+}
+
+void pushAtIdx(stack<int> &st, int idx, int val){
+    stack<int> temp;
+    while(st.size()>idx){
         temp.push(st.top());
         st.pop();
     }
@@ -34,8 +48,10 @@ int main(){
     st.push(40);
     st.push(50);
     print(st);
-    cout<<endl;
+   
     pushAtBottom(st,70);
+    print(st);
+    pushAtIdx(st,2,110);
     print(st);
 
 }
