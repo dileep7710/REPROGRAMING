@@ -10,7 +10,7 @@ class Stack{  //user defined data structure
    
     void push(int val){
         if(idx==sizeof(arr)/sizeof(arr[0])-1){
-            cout<<"Stack is Full"<<endl;;
+            cout<<"Stack is Full"<<endl;
             return;
         }
         idx++;
@@ -33,6 +33,12 @@ class Stack{  //user defined data structure
     int size(){ 
         return idx+1;
     }
+    void display(){
+        for(int i=0; i<=idx; i++){
+            cout<<arr[i]<<" ";
+        }
+        cout<<endl;
+    }
 
 };
 
@@ -47,7 +53,9 @@ int main(){
     st.push(60);
     
    // cout<<st.size()<<endl;
-    //st.pop();
+    st.pop();
     cout<<st.size()<<endl;
     cout<<st.top()<<endl;
+    st.display();
+
 }
